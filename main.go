@@ -22,7 +22,7 @@ func main() {
 	flag.Parse()
 
 	if err := godotenv.Load(); err != nil {
-		log.Fatal("Error loading .env file")
+		log.Print("Error loading .env file, using default values")
 	}
 	const maxFileSize = 20 * 1024 * 1024 // 20MB
 	apiKey := os.Getenv("API_KEY")
