@@ -15,7 +15,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-var port = flag.Int("port", 8090, "Port to run the server on")
+var port = flag.Int("port", 8080, "Port to run the server on")
 var uploadDir = flag.String("upload-dir", "./uploads", "Directory to save uploaded files")
 
 func main() {
