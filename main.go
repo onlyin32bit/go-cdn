@@ -26,7 +26,6 @@ func main() {
 	}
 	const maxFileSize = 20 * 1024 * 1024 // 20MB
 	apiKey := os.Getenv("API_KEY")
-	domain := os.Getenv("DOMAIN")
 	fmt.Println("Upload directory: ", *uploadDir)
 	fmt.Println("Server port: ", *port)
 
@@ -80,7 +79,7 @@ func main() {
 		}
 
 		return c.JSON(fiber.Map{
-			"url":        fmt.Sprintf("%s/%s", domain, finalFileName),
+			"url":        fmt.Sprintf("%s/%s", c.BaseURL(), finalFileName),
 			"size_after": info.Size(),
 		})
 	})
@@ -107,5 +106,5 @@ func main() {
 		return c.SendString("File deleted successfully")
 	})
 
-	app.Listen(fmt.Sprintf(":%d", *port))
+	app.Listen(fmt.Sprintf("0.0.0.0:%d", *port))
 }
