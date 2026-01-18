@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for go-cdn on 2026-01-18T08:28:39Z
+# fly.toml app configuration file generated for go-cdn on 2026-01-18T08:44:13Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -7,11 +7,6 @@ app = 'go-cdn'
 primary_region = 'sin'
 
 [build]
-  [build.args]
-    GO_VERSION = '1.24.0'
-
-[env]
-  PORT = '8080'
 
 [http_service]
   internal_port = 8080
